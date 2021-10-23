@@ -33,10 +33,15 @@ public class BookService {
     }
     
 
-    // creates a book
+    // updates a book
     public Book updateBook(Long id, String title, String description, String lang, int numOfPages) {
     	
     	Book b = new Book (id, title, description, lang, numOfPages);
+        return bookRepository.save(b);
+    }
+    
+ 
+    public Book updateBook(Book b) {
         return bookRepository.save(b);
     }
     
